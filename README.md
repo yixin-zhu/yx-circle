@@ -12,9 +12,7 @@
 
 ## 技术演进（计划）
 
-按 Git 提交逐步引入，避免一次性堆栈：
-
-1. Spring Boot 骨架与统一 API 规范
+1. ~~Spring Boot 骨架与统一 API 规范~~（已完成）
 2. 用户与 Token 会话
 3. 星球与成员模型 + Flyway
 4. 促销抢购（Redis Lua）+ RocketMQ + 幂等开通
@@ -23,9 +21,28 @@
 
 ## 开发
 
-（脚手架提交后将补充启动说明。）
+**环境：** JDK 17，Maven 3.6+，默认激活 `dev` profile。
+
+**IDEA 启动：**
+
+1. **File → Open** 选择本仓库根目录 `yx-circle`（不要只打开上级 `novamall` 文件夹）。
+2. 若未识别为 Maven 项目：右键 `pom.xml` → **Add as Maven Project**，等待依赖下载完成。
+3. **File → Project Structure → Project SDK** 选 **JDK 17**；**Modules** 里 Language level 17。
+4. 运行：右上角选 **YxCircleApplication**（`.run/` 已带配置），或打开 `YxCircleApplication.java` 点左侧绿色运行按钮。
+
+若模块名不是 `yx-circle`：Run Configuration 里把 Module 改成 IDEA 显示的模块名即可。
+
+**本地验证：**
+
+| 检查项 | 地址 |
+|--------|------|
+| 健康检查 | `GET http://localhost:8080/actuator/health` |
+| Ping | `GET http://localhost:8080/api/v1/ping` |
+| 业务异常样例 | `GET http://localhost:8080/api/v1/ping/error-demo` |
+| API 文档 | `http://localhost:8080/swagger-ui.html` |
+
+**测试：** 在 IDEA 中运行 `src/test/java` 下全部测试，或 `mvn test`。
 
 ## 仓库说明
 
 - 主分支：`main`
-- 旧练手代码仅作参考，不在本仓库继承
