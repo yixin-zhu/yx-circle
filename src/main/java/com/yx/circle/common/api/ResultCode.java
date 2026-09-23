@@ -1,8 +1,5 @@
 package com.yx.circle.common.api;
 
-import lombok.Getter;
-
-@Getter
 public enum ResultCode {
 
     SUCCESS(0, "ok"),
@@ -19,5 +16,13 @@ public enum ResultCode {
     ResultCode(int code, String message) {
         this.code = code;
         this.message = message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }
