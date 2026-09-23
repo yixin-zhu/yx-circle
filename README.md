@@ -31,6 +31,8 @@
 3. 启动应用后 Flyway 自动执行 `V1` 建表、`V2` 写入每表约 100 条模拟数据。
 4. 运行测试类 `DbMigrationAndSeedTests` 校验迁移与行数。
 
+**若 IDEA 无法运行 / 编译报错：** Maven 重新加载后应能通过编译；若启动失败，先看是否已创建库 `yx_circle` 且 MySQL 已启动（Flyway 启动时会连库）。
+
 **IDEA 启动：**
 
 1. **File → Open** 选择本仓库根目录 `yx-circle`（不要只打开上级 `novamall` 文件夹）。
