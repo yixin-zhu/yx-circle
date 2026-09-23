@@ -14,14 +14,22 @@
 
 1. ~~Spring Boot 骨架与统一 API 规范~~（已完成）
 2. 用户与 Token 会话
-3. 星球与成员模型 + Flyway
-4. 促销抢购（Redis Lua）+ RocketMQ + 幂等开通
-5. 可观测（TraceId、Micrometer）、Sentinel、Docker Compose
-6. 检索与对象存储（Elasticsearch、MinIO）— 视进度选做
+3. ~~Flyway + MySQL 表结构 + MyBatis-Plus + 模拟数据~~（已完成）
+4. 星球 / 成员 / 帖子业务 API
+5. 促销抢购（Redis Lua）+ RocketMQ + 幂等开通
+6. 可观测（TraceId、Micrometer）、Sentinel、Docker Compose
+7. 检索与对象存储（Elasticsearch、MinIO）— 视进度选做
 
 ## 开发
 
-**环境：** JDK 17，Maven 3.6+，默认激活 `dev` profile。
+**环境：** JDK 17，Maven 3.6+，MySQL 8，默认激活 `dev` profile。
+
+**MySQL（首次）：**
+
+1. 确保本地 MySQL 已启动（与练手项目相同：`127.0.0.1:3306`，用户 `root` / 密码 `1234`，可在 `application-dev.yml` 修改）。
+2. 执行 `docs/db/init_database.sql` 创建库 **`yx_circle`**（与旧库 `yx_shopping` 分离）。
+3. 启动应用后 Flyway 自动执行 `V1` 建表、`V2` 写入每表约 100 条模拟数据。
+4. 运行测试类 `DbMigrationAndSeedTests` 校验迁移与行数。
 
 **IDEA 启动：**
 
