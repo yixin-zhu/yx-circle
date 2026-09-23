@@ -13,7 +13,7 @@
 ## 技术演进（计划）
 
 1. ~~Spring Boot 骨架与统一 API 规范~~（已完成）
-2. 用户与 Token 会话
+2. ~~用户与 Token 会话~~（已完成）
 3. ~~Flyway + MySQL 表结构 + MyBatis-Plus + 模拟数据~~（已完成）
 4. 星球 / 成员 / 帖子业务 API
 5. 促销抢购（Redis Lua）+ RocketMQ + 幂等开通
